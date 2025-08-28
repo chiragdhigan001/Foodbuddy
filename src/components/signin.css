@@ -1,0 +1,7 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: linear-gradient(135deg, #1f4037, #99f2c8);
+}

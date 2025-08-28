@@ -1,0 +1,270 @@
+/*import { div } from "three/tsl";
+import "./home.css";
+import { useState } from "react";
+
+function Home() {
+  const images = [
+    "https://media.istockphoto.com/id/187248625/photo/pepperoni-pizza.webp?a=1&b=1&s=612x612&w=0&k=20&c=clncU414Y_vfH-OoUqiwy5AnZRwBpeSehVqJkD9SvKU=",
+    "https://media.istockphoto.com/id/998309062/photo/burger-with-beef-and-cheese.webp?a=1&b=1&s=612x612&w=0&k=20&c=hthCHhBsUotyv4SCP8MdltTNv1bT6g5R9NIB1fufva0=",
+    "https://media.istockphoto.com/id/157636846/photo/fizz.jpg?s=612x612&w=0&k=20&c=MUznstTBCD2-UJ4GFxWvJDGkl8IgjBizjIUR8TPq4-Y=",
+    "https://media.istockphoto.com/id/1137312508/photo/assortment-of-products-with-high-sugar-level.webp?a=1&b=1&s=612x612&w=0&k=20&c=XOFA1_Ffx-0xDTg35DoLPJfU49uWPZUCf8rNChdPOgs=",
+    "https://media.istockphoto.com/id/1218213212/photo/homemade-french-fries-with-ketchup-and-mayonnaise-on-rustic-wooden-table.webp?a=1&b=1&s=612x612&w=0&k=20&c=QYwXP0-whoz7Cni7CXNfIyT_pOcRpZUYHqkTYH4MEhA=",
+    "https://media.istockphoto.com/id/1333127665/photo/chicken-biryani-spicy-indian-malabar-biryani-hyderabadi-biryani-dum-biriyani-pulao-golden.jpg?s=612x612&w=0&k=20&c=63UXYPOISm8nJ8SNK79dDm0w1gY6jXzYQP0heL6fnOg=",
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  const nextImg = () => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const prevImg = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
+
+  const menuCard = [
+    {
+      imageUrl: "pizza.jpeg",
+      name: "Pizza Hut",
+      rating: 4.5,
+      location: "Downtown",
+    },
+    {
+      imageUrl: "burger.jpeg",
+      name: "Burger King",
+      rating: 4.2,
+      location: "Uptown",
+    },
+    {
+      imageUrl: "frenchfries.jpeg",
+      name: "Subway",
+      rating: 4.0,
+      location: "Midtown",
+    },
+    {
+      imageUrl: "dessert.jpeg",
+      name: "Taco Bell",
+      rating: 4.3,
+      location: "Eastside",
+    },
+    {
+      imageUrl: "biryani.jpeg",
+      name: "KFC",
+      rating: 4.1,
+      location: "Westside",
+    },
+    {
+      imageUrl: "drinks.jpeg",
+      name: "Drinks Hub",
+      rating: 4.4,
+      location: "Suburbs",
+    },
+    {
+      imageUrl: "chinese.jpeg",
+      name: "Panda Express",
+      rating: 4.2,
+      location: "Chinatown",
+    },
+    {
+      imageUrl: "chitpotle.jpeg",
+      name: "Chipotle",
+      rating: 4.5,
+      location: "City Center",
+    },
+  ];
+  return (
+    <div className="home">
+     <div className="clip-shape">
+      food buddy
+     </div>
+      <div className="image">
+        <img
+          src={images[current]}
+          alt="Hand lifting a cheesy slice from a pizza topped with paneer cubes, green and red bell peppers. The pizza sits on a wooden tray over a red table, with a Pizza Hut logo and name above. A pepper shaker and green plants are in the background, creating a vibrant and inviting atmosphere."
+          className="slider-img"
+        />
+
+        <div className="controls">
+          <button onClick={nextImg} className="right-btn">
+            right
+          </button>
+          <button onClick={prevImg} className="left-btn">
+            left
+          </button>
+        </div>
+      </div>
+      <div className="middlePart">
+        <p className="text">Order your favorite food !</p>
+
+        <div className="menu-list">
+          {menuCard.map((card, idx) => (
+            <div key={idx} className="menu-card">
+              <img
+                src={card.imageUrl}
+                alt={card.name}
+                className="menu-card-img"
+              />
+              <div className="menu-card-details">
+                <h3>{card.name}</h3>
+                <p>Rating: {card.rating}</p>
+                <p>Location: {card.location}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Home;*/
+
+//home.css
+/*
+.home{
+  background: linear-gradient(135deg, #1f4037, #99f2c8);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+}
+
+
+
+.image {
+  background: red;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  width: 50vw;
+  margin-left: 60rem;
+  margin-top: 7rem;
+  z-index: 2;
+}
+
+.slider-img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10rem;
+  transition: transform 0.05s ease;
+}
+
+.image .left-btn {
+  position: absolute;
+  top: 57%;
+  left: 73%;
+  z-index: 3;
+}
+
+.image .right-btn {
+  position: absolute;
+  top: 57%;
+  right: 18%;
+  z-index: 3;
+}
+
+.middlePart {
+  background-image: url("https://www.shutterstock.com/shutterstock/videos/1086192224/thumb/7.jpg?ip=x480");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  border-radius: 1rem;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.text {
+  font-size: 100px;
+  color: white;
+}
+
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.menu-card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ccc;
+  box-shadow: 0 4px 8 px rgba(0, 0, 0, 0.05);
+}
+
+.menu-card:hover {
+  transform: scale();
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.menu-card-details {
+  padding: 10px;
+  text-align: center;
+}
+{app.jsx}
+
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import Signin from "./components/Signin";
+import "./App.css";
+
+function App() {
+  return (
+    <>
+      <Header />
+      <Home />
+      <Signin/>
+      <Footer />
+    </>
+  );
+}
+
+export default App;
+
+{header}
+import "./Header.css";
+
+function Header() {
+  return (
+    <header className="header">
+      <div className="logo">
+        <span className="food">Food</span>
+        <span className="buddy">Buddy</span>
+      </div>
+      <nav className="navbar">
+        <ul>
+          <li>
+            <a href="home">Home</a>
+          </li>
+          <li>
+            <a href="contact">Contact</a>
+          </li>
+          <li>
+            <a href="">Order</a>
+          </li>
+          <li>
+            <a href="">Menu</a>
+          </li>
+          <li>
+            <a href="/Signin" target="blank">Sign In</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
+
+export default Header;
+
+*/

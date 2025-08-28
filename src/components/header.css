@@ -1,0 +1,70 @@
+/* Reset default margins/padding */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  box-sizing: border-box;
+  
+}
+
+/* Header container */
+.header {
+  position: fixed;         
+  top: 20px;                /* gap from top */
+  left: 50%;                /* start from center */
+  transform: translateX(-50%); /* perfectly center */
+  width: 90%;               /* header width */
+  max-width: 1200px;        /* optional: don’t let it get too wide */
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #ff7043;      /* orange background */
+  padding: 15px 30px;
+  color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
+  z-index: 1000;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+.logo .food { color: #fff; }
+.logo .buddy { color: #ffe082; }
+
+/* Navbar list */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.navbar ul li a:hover {
+  color: #ffe082;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    background: #ff5722;
+    padding: 10px;
+    border-radius: 8px;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+  }
+}
